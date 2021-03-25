@@ -15,6 +15,7 @@ public class GroundCheck : MonoBehaviour
     {
         if ((col.gameObject.tag == "Ball") && (ballScript.madeShot == false))
         {
+            SoundManager.PlaySound("Missed Shot");
             ballScript.madeShot = true;
             StartCoroutine(ballScript.MissedShotDelay());
         }

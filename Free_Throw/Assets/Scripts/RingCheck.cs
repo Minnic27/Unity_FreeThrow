@@ -16,6 +16,7 @@ public class RingCheck : MonoBehaviour
         if ((col.gameObject.tag == "Ball") && (ballScript.madeShot == false))
         {
             ballScript.madeShot = true;
+            SoundManager.PlaySound("Made Shot");
             StartCoroutine(ballScript.MadeShotDelay());
         }
     }
