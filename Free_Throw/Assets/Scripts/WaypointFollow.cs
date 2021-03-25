@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +11,6 @@ public class WaypointFollow : MonoBehaviour
     public float speed = 3.0f;
     public float accuracy = 1.0f;
     public float rotationSpeed = 1.0f;
-    public Transform target;
 
     void Start()
     {
@@ -25,8 +24,7 @@ public class WaypointFollow : MonoBehaviour
         Vector3 lookAtGoal = new Vector3(circuit.Waypoints[currentWP].position.x, this.transform.position.y, circuit.Waypoints[currentWP].position.z);
 
         Vector3 direction = lookAtGoal - this.transform.position;
-         //transform.LookAt(target);
-        //this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * rotationSpeed);
+        this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * rotationSpeed);
         if (direction.magnitude < accuracy) {
             currentWP++;
             if (currentWP >= circuit.Waypoints.Length) {
