@@ -9,18 +9,26 @@ public class UIText : MonoBehaviour
     public Text levelText;
     public int level = 1;
 
+    public Text numOfBallsUI;
     public int numOfBalls = 5;
 
     // Start is called before the first frame update
     void Start()
     {
         levelText.text = "" + level;
+        numOfBallsUI.text = "x " + numOfBalls;
     }
 
     public void AddLevel()
     {
         level++;
         levelText.text = "" + level;
+    }
+
+    public void DecreaseNumberOfBalls()
+    {
+        numOfBalls--;
+        numOfBallsUI.text = "x " + numOfBalls;
     }
 
     void LevelResult()
