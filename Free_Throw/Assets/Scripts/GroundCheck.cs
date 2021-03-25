@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RingCheck : MonoBehaviour
+public class GroundCheck : MonoBehaviour
 {
     public BallShoot ballScript;
 
     void Start()
     {
-        ballScript = GameObject.FindGameObjectWithTag("Spawn").GetComponent<BallShoot>(); // access BallShoot script
+        ballScript = GameObject.FindGameObjectWithTag("Spawn").GetComponent<BallShoot>();
     }
 
     void OnTriggerEnter(Collider col)
@@ -16,7 +16,8 @@ public class RingCheck : MonoBehaviour
         if ((col.gameObject.tag == "Ball") && (ballScript.madeShot == false))
         {
             ballScript.madeShot = true;
-            StartCoroutine(ballScript.MadeShotDelay());
+            StartCoroutine(ballScript.MissedShotDelay());
         }
+        
     }
 }
