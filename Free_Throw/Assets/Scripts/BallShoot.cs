@@ -18,8 +18,8 @@ public class BallShoot : MonoBehaviour
     public GameObject mainCamera;
     private GameObject spawnedBall;
 
-    public float ballThrowingForce;
-    public float currentThrowingForce;
+    private float ballThrowingForce;
+    private float currentThrowingForce;
 
     private Vector3 cameraAngle = new Vector3(0, -0.27f, 0.37f);
     private Vector3 shootingArc = new Vector3(0, 120, 50);
@@ -69,7 +69,6 @@ public class BallShoot : MonoBehaviour
     {
         
         holdingBall = true;
-        Debug.Log("Balls Left: " + uText.numOfBalls);
 
         if (missedShot == false)
         {

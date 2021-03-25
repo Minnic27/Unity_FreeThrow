@@ -13,7 +13,7 @@ public class RingCheck : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if ((col.gameObject.tag == "Ball") && (ballScript.madeShot == false))
+        if ((col.gameObject.tag == "Ball") && (ballScript.madeShot == false)) // if ball made the basket
         {
             ballScript.madeShot = true;
             SoundManager.PlaySound("Made Shot");

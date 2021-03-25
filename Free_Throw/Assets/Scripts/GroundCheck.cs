@@ -13,7 +13,7 @@ public class GroundCheck : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if ((col.gameObject.tag == "Ball") && (ballScript.madeShot == false))
+        if ((col.gameObject.tag == "Ball") && (ballScript.madeShot == false)) // if ball missed the basket
         {
             SoundManager.PlaySound("Missed Shot");
             ballScript.madeShot = true;

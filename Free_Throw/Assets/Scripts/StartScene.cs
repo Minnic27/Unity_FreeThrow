@@ -8,13 +8,12 @@ public class StartScene : MonoBehaviour
     
     public void StartGame()
     {
-        Debug.Log("change scene");
-          SceneManager.LoadScene("PlayGame", LoadSceneMode.Single);
+        SceneManager.LoadScene("PlayGame", LoadSceneMode.Single); // loads PlayGame scene
     }
 
     public void QuitGame()
     {
-        Debug.Log("Quit Game");
+        Debug.Log("Quit Game"); // quits application
         Application.Quit();
     }
 }
