@@ -11,7 +11,7 @@ public class BallShoot : MonoBehaviour
 
     private bool isDirectionUp = true;
     private float amtPower = 0.0f;
-    private float powerSpeed = 100.00f;
+    private float powerSpeed = 50.00f;
 
     public GameObject ball;
     public GameObject player;
